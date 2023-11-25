@@ -5,7 +5,6 @@ const clearBtn = document.getElementById("clearBtn");
 
 window.onload = isTaskListEmpty();
 
-
 taskList.addEventListener("click", function(e){
     if(e.target.tagName === "LI"){
         e.target.classList.toggle("checked");
@@ -29,6 +28,7 @@ function addTask() {
         let li = document.createElement("li");
         li.innerHTML = taskToAdd.value;
         taskList.appendChild(li);
+        taskToAdd.value = '';
         saveData();
     }
     else{
